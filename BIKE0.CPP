@@ -6,11 +6,20 @@
 
 int main(){
 	int gd = DETECT, gm;
-	int i, X=0, Y=200;
+	int i, X=0, Y=200,n=1;
 	initgraph(&gd, &gm, "/fApplications/TurboC++/TC/BGI");
 
 	//back-seat
-	for(i = 0 ; i < 590; i++, X++){
+	for(i = 0 ; i < 590; i++, X++, n+=5){
+	if(n>=359){
+		n = 0;
+	}
+	//pieslice(30+X,76+Y,360-n,380-n,17);
+	//pieslice(30+X,76+Y,180+n,190+n,17);
+
+	//pieslice(143+X,76+Y,0+n,90+n,17);
+	//pieslice(143+X,76+Y,180+n,270+n,17);
+
 	line(10+X,20+Y,40+X,20+Y);//l to r
 	line(40+X,20+Y,42+X,22+Y);
 	line(42+X,22+Y,43+X,24+Y);//r to d
@@ -78,11 +87,40 @@ int main(){
 	circle(30+X,76+Y,24); //back-tire
 	circle(30+X,76+Y,17);
 
-	circle(143+X,76+Y,24);
+	pieslice(30+X,76+Y,450-n,451-n,17);
+	pieslice(30+X,76+Y,427-n,428-n,17);
+	pieslice(30+X,76+Y,405-n,406-n,17);
+	pieslice(30+X,76+Y,382-n,383-n,17);
+	pieslice(30+X,76+Y,360-n,361-n,17);
+
+	pieslice(30+X,76+Y,630-n,631-n,17);
+	pieslice(30+X,76+Y,607-n,608-n,17);
+	pieslice(30+X,76+Y,585-n,586-n,17);
+	pieslice(30+X,76+Y,562-n,563-n,17);
+	pieslice(30+X,76+Y,540-n,541-n,17);
+
+
+	circle(143+X,76+Y,24); //front tire
 	circle(143+X,76+Y,17);
 
+	//pieslice(143+X,76+Y,360-n,340-n,17);
+	//pieslice(143+X,76+Y,550-n,530-n,17);
+        
+	pieslice(143+X,76+Y,450-n,451-n,17);
+	pieslice(143+X,76+Y,427-n,428-n,17);
+	pieslice(143+X,76+Y,405-n,406-n,17);
+	pieslice(143+X,76+Y,382-n,383-n,17);
+	pieslice(143+X,76+Y,360-n,361-n,17);
+
+	pieslice(143+X,76+Y,630-n,631-n,17);
+	pieslice(143+X,76+Y,607-n,608-n,17);
+	pieslice(143+X,76+Y,585-n,586-n,17);
+	pieslice(143+X,76+Y,562-n,563-n,17);
+	pieslice(143+X,76+Y,540-n,541-n,17);
+
 	line(0, 100+Y, 640, 100+Y);
-	delay(10);
+	delay(20
+	);
 	cleardevice();
 	}
 
